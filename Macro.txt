@@ -1,0 +1,22 @@
+Sub newestVer()
+
+Dim text As String
+Dim program As String
+Dim clipboard As MSForms.DataObject
+Set clipboard = New MSForms.DataObject
+
+program = "C:\Program Files (x86)\YourVault\newestver.exe "  'Location to your program
+
+For Each cell In ActiveSheet.range("H10:H13") 'Path range to run program with args
+
+text = """" + cell.Value
+
+clipboard.SetText text
+clipboard.PutInClipboard
+
+Call Shell(program & text, vbHide)
+Next cell
+
+End Sub
+
+'Run newest version of calculations or any file based on path you or client provided
