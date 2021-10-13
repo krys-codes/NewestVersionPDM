@@ -13,10 +13,10 @@ namespace newestversion
         static void Main(string[] args)
         {
             IEdmVault5 Vault = new EdmVault5();
-            string valutName = "YourVaultName";
+            string vaultName = "YourVaultName";
 
             //login if user is not authenticated
-            Vault.LoginAuto(valutName, 0); 
+            Vault.LoginAuto(vaultName, 0); 
 
             string mainPath = args[0];
 
